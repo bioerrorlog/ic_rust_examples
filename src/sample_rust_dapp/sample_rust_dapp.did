@@ -1,3 +1,4 @@
 service : {
-    "greet": (text) -> (text) query;
+    "get": () -> (nat64) query;
+    "increment": () -> (nat64);
 }

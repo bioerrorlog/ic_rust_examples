@@ -1,20 +1,20 @@
 {
   "canisters": {
-    "sample_rust_dapp": {
-      "candid": "src/sample_rust_dapp/sample_rust_dapp.did",
-      "package": "sample_rust_dapp",
+    "counter_simple": {
+      "candid": "src/counter_simple/counter_simple.did",
+      "package": "counter_simple",
       "type": "rust"
     },
-    "sample_rust_dapp_assets": {
+    "counter_simple_assets": {
       "dependencies": [
-        "sample_rust_dapp"
+        "counter_simple"
       ],
       "frontend": {
-        "entrypoint": "src/sample_rust_dapp_assets/src/index.html"
+        "entrypoint": "src/counter_simple_assets/src/index.html"
       },
       "source": [
-        "src/sample_rust_dapp_assets/assets",
-        "dist/sample_rust_dapp_assets/"
+        "src/counter_simple_assets/assets",
+        "dist/counter_simple_assets/"
       ],
       "type": "assets"
     }

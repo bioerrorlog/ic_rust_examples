@@ -1,5 +1,5 @@
 [package]
-name = "sample_rust_dapp"
+name = "counter_simple"
 version = "0.1.0"
 edition = "2018"
 

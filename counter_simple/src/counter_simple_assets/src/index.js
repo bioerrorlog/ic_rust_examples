@@ -1,4 +1,4 @@
-import { sample_rust_dapp } from "../../declarations/counter_simple";
+import { counter_simple } from "../../declarations/counter_simple";
 
 document.addEventListener('DOMContentLoaded', async function () {
   const counter = await counter_simple.get();

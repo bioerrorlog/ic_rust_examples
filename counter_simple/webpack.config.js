@@ -38,7 +38,7 @@ const canisterEnvVariables = initCanisterEnv();
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
-const frontendDirectory = "sample_rust_dapp_assets";
+const frontendDirectory = "counter_simple_assets";
 
 const asset_entry = path.join("src", frontendDirectory, "src", "index.html");
 

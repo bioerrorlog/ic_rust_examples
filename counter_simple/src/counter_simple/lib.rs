@@ -6,10 +6,9 @@ fn get() -> u64 {
 }
 
 #[ic_cdk_macros::update]
-fn increment() -> u64 {
+fn increment() {
     unsafe {
         CONTER += 1;
-        CONTER
     }
 }
 

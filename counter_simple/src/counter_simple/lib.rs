@@ -12,3 +12,9 @@ fn increment() -> u64 {
         CONTER
     }
 }
+
+#[test]
+fn check_increment_validity() {
+    increment();
+    assert_eq!(unsafe {CONTER}, 1);
+}

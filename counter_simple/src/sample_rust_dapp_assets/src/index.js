@@ -1,19 +1,11 @@
 import { sample_rust_dapp } from "../../declarations/sample_rust_dapp";
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+document.addEventListener('DOMContentLoaded', async function () {
+  const counter = await sample_rust_dapp.get();
+  document.getElementById("counter").innerText = "Counter: " + counter;
+})
 
-  const name = document.getElementById("name").value.toString();
-
-  button.setAttribute("disabled", true);
-
-  // Interact with foo actor, calling the greet method
-  const greeting = await sample_rust_dapp.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
+document.getElementById("clickMeBtn").addEventListener("click", async () => {
+  const counter = await sample_rust_dapp.increment();
+  document.getElementById("counter").innerText = "Counter: " + counter;
 });

@@ -3,7 +3,11 @@ fn greet(name: String) -> String {
     format!("Hello, {}!", name)
 }
 
-#[test]
-fn test_greeting() {
-    assert_eq!(greet("World".to_string()), "Hello, World!");
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_greeting() {
+        assert_eq!(greet("World".to_string()), "Hello, World!");
+    }
 }

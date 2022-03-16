@@ -12,8 +12,13 @@ fn increment() {
     }
 }
 
-#[test]
-fn check_increment_validity() {
-    increment();
-    assert_eq!(unsafe {CONTER}, 1);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn check_increment_validity() {
+        increment();
+        assert_eq!(unsafe {CONTER}, 1);
+    }
 }

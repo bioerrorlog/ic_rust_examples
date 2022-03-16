@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "dfx": "0.9.2",
+  "canisters": {
+    "counter": {
+      "type": "rust",
+      "package": "counter",
+      "candid": "src/counter/counter.did"
+    },
+    "counter_assets": {
+      "type": "assets",
+      "source": [
+        "src/counter_assets/assets"
+      ],
+      "dependencies": [
+        "counter"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

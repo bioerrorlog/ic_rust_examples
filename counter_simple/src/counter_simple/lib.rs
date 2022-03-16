@@ -17,8 +17,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn check_increment_validity() {
+    fn check_first_increment_validity() {
         increment();
         assert_eq!(unsafe {CONTER}, 1);
+    }
+
+    #[test]
+    fn check_increment_validity_with_specific_status() {
+        unsafe { CONTER = 100; }
+        increment();
+        assert_eq!(unsafe {CONTER}, 101);
     }
 }

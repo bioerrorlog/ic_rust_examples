@@ -12,10 +12,21 @@ mod tests {
         assert!(result.contains("World"));
     }
 
-
     #[test]
     fn greeting_contains_jp_string() {
         let result = greet("日本語の名前".to_string());
         assert!(result.contains("日本語の名前"));
+    }
+
+    #[test]
+    fn greeting_contains_complex_jp_kanji_string() {
+        let result = greet("竈門禰豆子".to_string());
+        assert!(result.contains("竈門禰豆子"));
+    }
+
+    #[test]
+    fn greeting_contains_emoji() {
+        let result = greet("👪".to_string());
+        assert!(result.contains("👪"));
     }
 }

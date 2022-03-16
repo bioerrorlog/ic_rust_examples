@@ -3,6 +3,7 @@ fn greet(name: String) -> String {
     format!("Hello, {}!", name)
 }
 
+#[cfg(test)]
 mod tests {
     use super::*;
 

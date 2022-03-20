@@ -32,7 +32,7 @@ mod tests {
     fn check_first_increment_validity() {
         init();
         increment();
-        assert_eq!(unsafe { COUNTER }, 1);
+        assert_eq!(get(), 1);
     }
 
     #[test]
@@ -42,6 +42,6 @@ mod tests {
             COUNTER = 100;
         }
         increment();
-        assert_eq!(unsafe { COUNTER }, 101);
+        assert_eq!(get(), 101);
     }
 }

@@ -12,7 +12,9 @@ fn init() {
 
 #[update]
 fn increment() -> () {
-    unsafe { COUNTER.as_mut().unwrap().0 += 1u64 }
+    unsafe {
+        COUNTER.as_mut().unwrap().0 += 1u64;
+    }
 }
 
 #[query]
@@ -24,5 +26,16 @@ fn get() -> candid::Nat {
 fn set(input: candid::Nat) -> () {
     unsafe {
         COUNTER.as_mut().unwrap().0 = input.0;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn check_initial_get() {
+        init();
+        assert_eq!(get(), candid::Nat::from(0));
     }
 }

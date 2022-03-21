@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "dfx": "0.9.2",
+  "canisters": {
+    "multi_canisters": {
+      "type": "rust",
+      "package": "multi_canisters",
+      "candid": "src/multi_canisters/multi_canisters.did"
+    },
+    "multi_canisters_assets": {
+      "type": "assets",
+      "source": [
+        "src/multi_canisters_assets/assets"
+      ],
+      "dependencies": [
+        "multi_canisters"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

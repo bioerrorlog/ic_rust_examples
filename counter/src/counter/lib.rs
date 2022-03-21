@@ -1,28 +1,27 @@
 use ic_cdk::export::candid;
-use ic_cdk_macros::*;
 
 static mut COUNTER: Option<candid::Nat> = None;
 
-#[init]
+#[ic_cdk_macros::init]
 fn init() {
     unsafe {
         COUNTER = Some(candid::Nat::from(0));
     }
 }
 
-#[update]
+#[ic_cdk_macros::update]
 fn increment() -> () {
     unsafe {
         COUNTER.as_mut().unwrap().0 += 1u64;
     }
 }
 
-#[query]
+#[ic_cdk_macros::query]
 fn get() -> candid::Nat {
     unsafe { COUNTER.as_mut().unwrap().clone() }
 }
 
-#[update]
+#[ic_cdk_macros::update]
 fn set(input: candid::Nat) -> () {
     unsafe {
         COUNTER.as_mut().unwrap().0 = input.0;

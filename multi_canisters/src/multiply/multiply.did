@@ -1,3 +1,4 @@
 service : {
-    "greet": (text) -> (text) query;
+    "mul": (nat64) -> (nat64);
+    "read": () -> (nat64) query;
 }

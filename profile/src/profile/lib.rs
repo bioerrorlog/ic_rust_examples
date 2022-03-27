@@ -1,5 +1,5 @@
-use ic_cdk::{
-    export::{CandidType, Deserialize},
+use ic_cdk::export::{
+    candid::{CandidType, Deserialize},
     Principal,
 };
 use std::cell::RefCell;

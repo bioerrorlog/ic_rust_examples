@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "dfx": "0.9.2",
+  "canisters": {
+    "profile": {
+      "type": "rust",
+      "package": "profile",
+      "candid": "src/profile/profile.did"
+    },
+    "profile_assets": {
+      "type": "assets",
+      "source": [
+        "src/profile_assets/assets"
+      ],
+      "dependencies": [
+        "profile"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

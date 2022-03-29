@@ -19,3 +19,15 @@ thread_local! {
     static PROFILE_STORE: RefCell<ProfileStore> = RefCell::default();
     static ID_STORE: RefCell<IdStore> = RefCell::default();
 }
+
+#[query(name = "getSelf")]
+fn get_self() -> Profile {
+    let id = ic_cdk::api::caller();
+    PROFILE_STORE.with(|profile_store| {
+        profile_store
+            .borrow()
+            .get(&id)
+            .cloned()
+            .unwrap_or_else(|| Profile::default())
+    })
+}

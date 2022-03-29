@@ -20,7 +20,7 @@ thread_local! {
     static ID_STORE: RefCell<IdStore> = RefCell::default();
 }
 
-#[query(name = "getSelf")]
+#[ic_cdk_macros::query(name = "getSelf")]
 fn get_self() -> Profile {
     let id = ic_cdk::api::caller();
     PROFILE_STORE.with(|profile_store| {
